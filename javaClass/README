@@ -1,0 +1,6 @@
+## ABI and Bin file generator 
+ `solc BankGuaranteeReleaseManager.sol --base-path . --bin --abi --optimize -o ../output/ --via-ir`
+
+## java class
+
+`https://greg.jeanmart.me/2019/07/19/generate-a-java-wrapper-from-your-smart-contract/`

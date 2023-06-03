@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.quorum.web3j</groupId>
+    <artifactId>generator</artifactId>
+    <version>1.0.0</version>
+    <name>Solidity to Java code generator</name>
+	  <description>Solidity to Java code generator</description>
+    <properties>
+        <web3j.quorum.version>4.10.0</web3j.quorum.version>
+        <web3j-maven-plugin.version>4.9.8</web3j-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+        <!-- web3j START -->
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>quorum</artifactId>
+            <version>4.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>${web3j.quorum.version}</version>
+        </dependency>
+        <!-- web3j END -->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.web3j</groupId>
+                <artifactId>web3j-maven-plugin</artifactId>
+                <version>${web3j-maven-plugin.version}</version>
+                <configuration>
+                    <packageName>com.quorum.web3j</packageName>
+                    <soliditySourceFiles>
+                        <directory>src/main/solidity</directory>
+                        <includes>
+                            <include>*.sol</include>
+                        </includes>
+                    </soliditySourceFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
